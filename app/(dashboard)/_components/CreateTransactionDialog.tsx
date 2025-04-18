@@ -1,7 +1,7 @@
 'use client'
 
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
-import { FormControl, FormDescription, FormField, FormItem, FormLabel } from "@/components/ui/form"
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { TransactionType } from "@/lib/types"
 import { cn } from "@/lib/utils"
@@ -14,7 +14,7 @@ interface Props {
 }
 
 import React from 'react'
-import { Form, useForm } from "react-hook-form"
+import {  useForm } from "react-hook-form"
 import CategoryPicker from "./CategoryPicker"
 
 const CreateTransactionDialog = ({ trigger, type }: Props) => {
@@ -44,7 +44,7 @@ const CreateTransactionDialog = ({ trigger, type }: Props) => {
                                 <FormItem>
                                     <FormLabel>Description</FormLabel>
                                     <FormControl>
-                                        <Input defaultValue={""} {...field} />
+                                        <Input  {...field} />
                                     </FormControl>
                                     <FormDescription>
                                         Transaction description (optional)
@@ -60,7 +60,7 @@ const CreateTransactionDialog = ({ trigger, type }: Props) => {
                                 <FormItem>
                                     <FormLabel>Amount</FormLabel>
                                     <FormControl>
-                                        <Input defaultValue={0} type="number" {...field} />
+                                        <Input type="number" {...field} />
                                     </FormControl>
                                     <FormDescription>
                                         Transaction amount (required)
