@@ -19,9 +19,10 @@ import { Category } from '@/lib/generated/prisma'
 import { toast } from 'sonner'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 interface Props {
-    type: TransactionType
+    type: TransactionType,
+    successCallback: (category: Category) => void
 }
-const CreateCategoryDialog = ({ type }: Props) => {
+const CreateCategoryDialog = ({ type, successCallback }: Props) => {
     const [open, setOpen] = React.useState(false)
     const form = useForm<CreateCategorySchemaType>({
         resolver: zodResolver(CreateCategorySchema),
@@ -43,6 +44,8 @@ const CreateCategoryDialog = ({ type }: Props) => {
             toast.success(`Category ${data.name} created successfully 🎉`, {
                 id: 'create-category',
             });
+
+            successCallback(data)
 
             await queryClient.invalidateQueries({
                 queryKey: ['categories']
@@ -93,7 +96,7 @@ const CreateCategoryDialog = ({ type }: Props) => {
                                 <FormItem>
                                     <FormLabel>Name</FormLabel>
                                     <FormControl>
-                                        <Input defaultValue={""} {...field} />
+                                        <Input {...field} />
                                     </FormControl>
                                     <FormDescription>
                                         Transaction description (optional)
@@ -152,7 +155,7 @@ const CreateCategoryDialog = ({ type }: Props) => {
                         </Button>
                     </DialogClose>
                     <Button onClick={form.handleSubmit(onSubmit)} disabled={isPending}>
-                        {isPending && "Create"}
+                        {!isPending && "Create"}
                         {isPending && <Loader2 className='animate-spin' />}
                     </Button>
                 </DialogFooter>{" "}
