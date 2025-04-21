@@ -18,6 +18,7 @@ import { CreateCategory } from '../_actions/categories'
 import { Category } from '@/lib/generated/prisma'
 import { toast } from 'sonner'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
+import { useTheme } from 'next-themes'
 interface Props {
     type: TransactionType,
     successCallback: (category: Category) => void
@@ -31,6 +32,7 @@ const CreateCategoryDialog = ({ type, successCallback }: Props) => {
         }
     })
     const queryClient = useQueryClient()
+    const theme = useTheme();
 
     const { mutate, isPending } = useMutation({
         mutationFn: CreateCategory,
@@ -96,10 +98,10 @@ const CreateCategoryDialog = ({ type, successCallback }: Props) => {
                                 <FormItem>
                                     <FormLabel>Name</FormLabel>
                                     <FormControl>
-                                        <Input {...field} />
+                                        <Input placeholder='Category' {...field} />
                                     </FormControl>
                                     <FormDescription>
-                                        Transaction description (optional)
+                                        This is how your category will apper in the app
                                     </FormDescription>
                                 </FormItem>
                             )}
@@ -129,7 +131,9 @@ const CreateCategoryDialog = ({ type, successCallback }: Props) => {
                                                 </Button>
                                             </PopoverTrigger>
                                             <PopoverContent className='w-full'>
-                                                <Picker data={data} onEmojiSelect={(emoji: { native: string }) => {
+                                                <Picker data={data} 
+                                                theme={theme.resolvedTheme}
+                                                onEmojiSelect={(emoji: { native: string }) => {
                                                     field.onChange(emoji.native)
                                                 }}
                                                 />
@@ -148,7 +152,6 @@ const CreateCategoryDialog = ({ type, successCallback }: Props) => {
                     <DialogClose asChild>
                         <Button type='button' variant={'secondary'} onClick={() => {
                             form.reset()
-                            setOpen(false)
                         }}
                         >
                             Cancel

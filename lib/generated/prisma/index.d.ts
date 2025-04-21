@@ -3209,7 +3209,7 @@ export namespace Prisma {
     date: Date | null
     userId: string | null
     type: string | null
-    categoryId: string | null
+    category: string | null
     categoryIcon: string | null
   }
 
@@ -3222,7 +3222,7 @@ export namespace Prisma {
     date: Date | null
     userId: string | null
     type: string | null
-    categoryId: string | null
+    category: string | null
     categoryIcon: string | null
   }
 
@@ -3235,7 +3235,7 @@ export namespace Prisma {
     date: number
     userId: number
     type: number
-    categoryId: number
+    category: number
     categoryIcon: number
     _all: number
   }
@@ -3258,7 +3258,7 @@ export namespace Prisma {
     date?: true
     userId?: true
     type?: true
-    categoryId?: true
+    category?: true
     categoryIcon?: true
   }
 
@@ -3271,7 +3271,7 @@ export namespace Prisma {
     date?: true
     userId?: true
     type?: true
-    categoryId?: true
+    category?: true
     categoryIcon?: true
   }
 
@@ -3284,7 +3284,7 @@ export namespace Prisma {
     date?: true
     userId?: true
     type?: true
-    categoryId?: true
+    category?: true
     categoryIcon?: true
     _all?: true
   }
@@ -3384,7 +3384,7 @@ export namespace Prisma {
     date: Date
     userId: string
     type: string
-    categoryId: string
+    category: string
     categoryIcon: string
     _count: TransactionCountAggregateOutputType | null
     _avg: TransactionAvgAggregateOutputType | null
@@ -3416,7 +3416,7 @@ export namespace Prisma {
     date?: boolean
     userId?: boolean
     type?: boolean
-    categoryId?: boolean
+    category?: boolean
     categoryIcon?: boolean
   }, ExtArgs["result"]["transaction"]>
 
@@ -3429,7 +3429,7 @@ export namespace Prisma {
     date?: boolean
     userId?: boolean
     type?: boolean
-    categoryId?: boolean
+    category?: boolean
     categoryIcon?: boolean
   }, ExtArgs["result"]["transaction"]>
 
@@ -3442,7 +3442,7 @@ export namespace Prisma {
     date?: boolean
     userId?: boolean
     type?: boolean
-    categoryId?: boolean
+    category?: boolean
     categoryIcon?: boolean
   }, ExtArgs["result"]["transaction"]>
 
@@ -3455,11 +3455,11 @@ export namespace Prisma {
     date?: boolean
     userId?: boolean
     type?: boolean
-    categoryId?: boolean
+    category?: boolean
     categoryIcon?: boolean
   }
 
-  export type TransactionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "updatedAt" | "amount" | "description" | "date" | "userId" | "type" | "categoryId" | "categoryIcon", ExtArgs["result"]["transaction"]>
+  export type TransactionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "updatedAt" | "amount" | "description" | "date" | "userId" | "type" | "category" | "categoryIcon", ExtArgs["result"]["transaction"]>
 
   export type $TransactionPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Transaction"
@@ -3473,7 +3473,7 @@ export namespace Prisma {
       date: Date
       userId: string
       type: string
-      categoryId: string
+      category: string
       categoryIcon: string
     }, ExtArgs["result"]["transaction"]>
     composites: {}
@@ -3906,7 +3906,7 @@ export namespace Prisma {
     readonly date: FieldRef<"Transaction", 'DateTime'>
     readonly userId: FieldRef<"Transaction", 'String'>
     readonly type: FieldRef<"Transaction", 'String'>
-    readonly categoryId: FieldRef<"Transaction", 'String'>
+    readonly category: FieldRef<"Transaction", 'String'>
     readonly categoryIcon: FieldRef<"Transaction", 'String'>
   }
     
@@ -6406,7 +6406,7 @@ export namespace Prisma {
     date: 'date',
     userId: 'userId',
     type: 'type',
-    categoryId: 'categoryId',
+    category: 'category',
     categoryIcon: 'categoryIcon'
   };
 
@@ -6582,7 +6582,7 @@ export namespace Prisma {
     date?: DateTimeFilter<"Transaction"> | Date | string
     userId?: StringFilter<"Transaction"> | string
     type?: StringFilter<"Transaction"> | string
-    categoryId?: StringFilter<"Transaction"> | string
+    category?: StringFilter<"Transaction"> | string
     categoryIcon?: StringFilter<"Transaction"> | string
   }
 
@@ -6595,7 +6595,7 @@ export namespace Prisma {
     date?: SortOrder
     userId?: SortOrder
     type?: SortOrder
-    categoryId?: SortOrder
+    category?: SortOrder
     categoryIcon?: SortOrder
   }
 
@@ -6611,7 +6611,7 @@ export namespace Prisma {
     date?: DateTimeFilter<"Transaction"> | Date | string
     userId?: StringFilter<"Transaction"> | string
     type?: StringFilter<"Transaction"> | string
-    categoryId?: StringFilter<"Transaction"> | string
+    category?: StringFilter<"Transaction"> | string
     categoryIcon?: StringFilter<"Transaction"> | string
   }, "id">
 
@@ -6624,7 +6624,7 @@ export namespace Prisma {
     date?: SortOrder
     userId?: SortOrder
     type?: SortOrder
-    categoryId?: SortOrder
+    category?: SortOrder
     categoryIcon?: SortOrder
     _count?: TransactionCountOrderByAggregateInput
     _avg?: TransactionAvgOrderByAggregateInput
@@ -6645,7 +6645,7 @@ export namespace Prisma {
     date?: DateTimeWithAggregatesFilter<"Transaction"> | Date | string
     userId?: StringWithAggregatesFilter<"Transaction"> | string
     type?: StringWithAggregatesFilter<"Transaction"> | string
-    categoryId?: StringWithAggregatesFilter<"Transaction"> | string
+    category?: StringWithAggregatesFilter<"Transaction"> | string
     categoryIcon?: StringWithAggregatesFilter<"Transaction"> | string
   }
 
@@ -6864,7 +6864,7 @@ export namespace Prisma {
     date: Date | string
     userId: string
     type?: string
-    categoryId: string
+    category: string
     categoryIcon: string
   }
 
@@ -6877,7 +6877,7 @@ export namespace Prisma {
     date: Date | string
     userId: string
     type?: string
-    categoryId: string
+    category: string
     categoryIcon: string
   }
 
@@ -6890,7 +6890,7 @@ export namespace Prisma {
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     userId?: StringFieldUpdateOperationsInput | string
     type?: StringFieldUpdateOperationsInput | string
-    categoryId?: StringFieldUpdateOperationsInput | string
+    category?: StringFieldUpdateOperationsInput | string
     categoryIcon?: StringFieldUpdateOperationsInput | string
   }
 
@@ -6903,7 +6903,7 @@ export namespace Prisma {
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     userId?: StringFieldUpdateOperationsInput | string
     type?: StringFieldUpdateOperationsInput | string
-    categoryId?: StringFieldUpdateOperationsInput | string
+    category?: StringFieldUpdateOperationsInput | string
     categoryIcon?: StringFieldUpdateOperationsInput | string
   }
 
@@ -6916,7 +6916,7 @@ export namespace Prisma {
     date: Date | string
     userId: string
     type?: string
-    categoryId: string
+    category: string
     categoryIcon: string
   }
 
@@ -6929,7 +6929,7 @@ export namespace Prisma {
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     userId?: StringFieldUpdateOperationsInput | string
     type?: StringFieldUpdateOperationsInput | string
-    categoryId?: StringFieldUpdateOperationsInput | string
+    category?: StringFieldUpdateOperationsInput | string
     categoryIcon?: StringFieldUpdateOperationsInput | string
   }
 
@@ -6942,7 +6942,7 @@ export namespace Prisma {
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     userId?: StringFieldUpdateOperationsInput | string
     type?: StringFieldUpdateOperationsInput | string
-    categoryId?: StringFieldUpdateOperationsInput | string
+    category?: StringFieldUpdateOperationsInput | string
     categoryIcon?: StringFieldUpdateOperationsInput | string
   }
 
@@ -7186,7 +7186,7 @@ export namespace Prisma {
     date?: SortOrder
     userId?: SortOrder
     type?: SortOrder
-    categoryId?: SortOrder
+    category?: SortOrder
     categoryIcon?: SortOrder
   }
 
@@ -7203,7 +7203,7 @@ export namespace Prisma {
     date?: SortOrder
     userId?: SortOrder
     type?: SortOrder
-    categoryId?: SortOrder
+    category?: SortOrder
     categoryIcon?: SortOrder
   }
 
@@ -7216,7 +7216,7 @@ export namespace Prisma {
     date?: SortOrder
     userId?: SortOrder
     type?: SortOrder
-    categoryId?: SortOrder
+    category?: SortOrder
     categoryIcon?: SortOrder
   }
 
